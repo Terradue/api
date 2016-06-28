@@ -1,6 +1,7 @@
 
-Data
-====
+Data API
+========
+
 
 .. toctree::
    :maxdepth: 2

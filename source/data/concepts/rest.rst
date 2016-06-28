@@ -1,10 +1,10 @@
 REST api
---------
+^^^^^^^^
 
 All the commands described in the following sections are provided using the comprehensive HTTP REST API of the platform.
 
 Usage
-^^^^^
+"""""
 
 Platform's REST API endpoints can be invoked in any of the standard ways to invoke a RESTful API. Most of the following sections describe how to use the REST API using ``cURL`` or ``opensearch-client`` as an example.
 
@@ -13,7 +13,7 @@ Platform's REST API endpoints can be invoked in any of the standard ways to invo
 
 
 Authentication
-^^^^^^^^^^^^^^
+""""""""""""""
 
 One of most important parameter to set in those REST commands is your API key which is configured in your profile page in the portal.
 
@@ -26,7 +26,7 @@ REST API supports three forms of authentication:
 
 
 Routes
-^^^^^^
+""""""
 
 Routes are semantically important, especially in the case of searching.
 

@@ -1,7 +1,7 @@
 .. _metadatamodel:
 
 Metadata models
-===============
+^^^^^^^^^^^^^^^
 
 
 A data model defines and analyzes :ref:`entry` specifications to support a metadata structure corresponding to the business domain of the dataset. this structure is used to
@@ -14,7 +14,7 @@ A data model defines and analyzes :ref:`entry` specifications to support a metad
 .. _syndicationmetadatamodel:
 
 The Base Syndication Model : Atom
----------------------------------
+"""""""""""""""""""""""""""""""""
 
 This is the base model for all the others. Based on `Atom <https://tools.ietf.org/html/rfc4287>`_, it is used to describe feeds of information. This is typically used by news web sites, to publish a list a of news articles that are available for reading. Its structure is particulary well designed for catalogue service. 
 
@@ -66,7 +66,7 @@ The entry section, just like the feed's main metadata section, has the obligator
 .. _geotimemetadatamodel:
 
 Geo & Time model
-----------------
+""""""""""""""""
 
 The Geo & Time model is directly derived from the specification for the `OpenSearch Geo and Time extensions <http://www.opengeospatial.org/standards/opensearchgeo>`_. it is intended to provide a very simple way to structure spatial and temporal metadata to a geospatial entry that contains geographic and temporal properties.
 
@@ -122,7 +122,7 @@ Full specification : `[10-032r8] OGC® OpenSearch Geo and Time Extensions <https
 
 
 Earth Observation Profile Model
--------------------------------
+"""""""""""""""""""""""""""""""
 
 Earth Observation :ref:`dataset` are generally managed within logical collections that are usually structured to contain data items derived from sensors onboard a satellite or series of satellites. The key characteristics differentiating products within the collections are date of acquisition, location as well as characteristics depending on the type of sensor, For example, key characteristics for optical imagery are the possible presence of cloud, haze, smokes or other atmospheric or on ground phenomena obscuring the image. 
 The common metadata used to distinguish EO products types are defined and analysed for generic and thematic EO products (i.e optical, radar, atmospheric, altimetry, limb-looking and synthesis and systematic products).

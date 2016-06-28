@@ -1,11 +1,11 @@
 .. _opensearch:
 
 OpenSearch
-----------
+^^^^^^^^^^
 
 
 What is OpenSearch ?
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""
 
 
 OpenSearch is a collection of simple formats for the sharing of search results.
@@ -13,7 +13,7 @@ The `OpenSearch <http://www.opensearch.org/Specification s/OpenSearch/1.1/Draft_
 The OpenSearch response elements can be used to extend existing syndication formats, such as RSS and Atom, with the extra :ref:`metadata <metadata model>` needed to return search results.
 
 Description of Service
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 
 The client uses the OSDD to learn about the public interface of the server. The OSDD contains parameterized URL templates that indicate how the search client should make search requests. The URL template can iterate as many times as the output format of the search result are supported.
 
@@ -29,7 +29,7 @@ The client uses the OSDD to learn about the public interface of the server. The 
 
 
 Search
-^^^^^^
+""""""
 
 A client constructs the request URL by replacing each {xxx} in the URL template with a value and sends it to the server via HTTP GET. For example :
 
@@ -47,7 +47,7 @@ to be a valid search request string. Optional parameters indicated with a "?" su
 
 
 Search Response
-^^^^^^^^^^^^^^^
+"""""""""""""""
 
 OpenSearch doesn’t define or require any specific encoding :ref:`format <mediatype>` for the search response. Instead, it defines a set of search-related metadata elements which can be inserted into existing encoding formats. Typically, list-based XML syndication formats - such as RSS 2.0 and Atom 1.0 - are used.
 

@@ -10,7 +10,6 @@ Welcome to Terradue Cloud Platform API's documentation!
    :maxdepth: 3
 
    overview/index
-   concepts/index
    data/index 
    services/index
    development/index

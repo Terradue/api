@@ -1,6 +1,6 @@
 ## Terradue Cloud Platform API
 
-[![Build Status](https://build.terradue.com/buildStatus/icon?job=t2-api)](https://build.terradue.com/job/t2-api/)
+[![Build Status](https://build.terradue.com/buildStatus/icon?job=doc-t2-api)](https://build.terradue.com/job/doc-t2-api/)
 
 This is the official repository of the Terradue Cloud Platform API. 
 
@@ -27,6 +27,6 @@ Build the documentation by running ``make html`` or ``make latex``
 
 ### Continuous build
 
-The PDF is generated at http://docs.terradue.com/t2-api/T2-API.pdf every time a change is pushed on the repo.
+The PDF is generated at http://docs.terradue.com/t2-api/T2API.pdf every time a change is pushed on the repo.
 
 #### This documentation is built with [sphinx](http://sphinx-doc.org/).

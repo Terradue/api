@@ -1,5 +1,5 @@
 Content Type
-============
+^^^^^^^^^^^^
 
 .. _mediatype:
 

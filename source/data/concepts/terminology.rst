@@ -16,7 +16,7 @@ A data cluster is a collection of one or more nodes (servers) that together brin
 Catalogue
 """""""""
 
-In the :ref:`Data Agency <dataagency>`, this is the module that hosts the service to index, search, update, and delete documents in several indexes.
+In the :ref:`Data Agency <dataagency>`, this is the module that hosts the service to index, search, update, and delete :ref:`entries <entry>` in several indexes.
 
 
 .. _index:
@@ -24,7 +24,7 @@ In the :ref:`Data Agency <dataagency>`, this is the module that hosts the servic
 Index
 """""
 
-An index is a collection of entries in the catalogue that most of the time describe a dataset. For example, there is an index for Sentinel-1 data, another index for Landsat-8 data, and yet another index for your own data. An index is identified by a name (that must be all lowercase) and this name is used to refer to the index when performing indexing, search, update, and delete operations against the entries in it. Index names are unique in the cluster where they are hosted.
+An index is a collection of :ref:`entries <entry>` in the catalogue that most of the time describe a :ref:`dataset <dataset>`. For example, there is an index for Sentinel-1 data, another index for Landsat-8 data, and yet another index for your own data. An index is identified by a name (that must be all lowercase) and this name is used to refer to the index when performing indexing, search, update, and delete operations against the entries in it. Index names are unique in the :ref:`cluster <cluster>` where they are hosted.
 
 .. _type:
 
@@ -32,7 +32,7 @@ An index is a collection of entries in the catalogue that most of the time descr
 Type
 """"
 
-Within an index, the entries are defined by one type. A type is a logical category/partition of your index whose semantics is defined according to a :ref:`metadata model <metadatamodel>`. In general, a type is defined for entries that have a set of common fields. One of the common type is ``Geo&Time`` that specifies spatial and temporal properties for an entry.
+Within an index, the :ref:`entries <entry>` are defined by one type. A type is a logical category/partition of your index whose semantics is defined according to a :ref:`metadata model <metadatamodel>`. In general, a type is defined for entries that have a set of common properties. One of the common type is ``Geo&Time`` that specifies spatial and temporal properties for an entry.
 
 
 .. _entry:
@@ -51,7 +51,7 @@ An entry is the basic object indexed in the catalogue. Each entry has a unique i
 Collection
 """"""""""
 
-A collection is an abstract set of granules :ref:`entries <entry>` sharing one or more specification. A collection typically is a :ref:`series <series>` in an :ref:`index <index>` in the catalogue or a :ref:`data package <datapackage>` in the portal.
+A collection is an abstract set of granules :ref:`entries <entry>` sharing one or more properties. A collection typically is a :ref:`series <series>` in an :ref:`index <index>` in the catalogue or a :ref:`data package <datapackage>` in the portal.
 
 
 .. _series:

@@ -12,28 +12,81 @@ Simple json
 
 .. code-block:: console
 
-  curl -H "X-T2-Api:ABcdEF" "https://data.terradue.com/catalogue"
+  curl -u mrossi:ABcdEF "https://data.terradue.com/catalogue"
 
 and the response as simple json
 
 .. code-block:: json
 
     {
-      "indices" : [
-        {
-          "name" : "sentinel1",
-          "description" : "Index containing the datasets of Sentinel-1 space mission funded by the European Union and carried out by the ESA within the Copernicus Programme."
-        },
-        {
-          "name" : "landsat8",
-          "description" : "Index containing the datasets of Landsat-8 American Earth observation satellite launched on February 11, 2013. It is the eighth satellite in the Landsat program"
-        },
-        {
-          "name" : "mrossi",
-          "description" : "Personal User index containing datasets saved and published by the user Marco Rossi."
-        }
+      "indices": [
+          {
+              "authors": [
+                  {
+                      "name": "Mario Rossi",
+                      "mail": "mrossi@test.com"
+                  }
+              ],
+              "created": "2016-06-03T10:30:42.7708920Z",
+              "description": "Index containing the entries of the datasets published and saved by Mario Rossi.",
+              "indexName": "mrossi",
+              "lastMigrated": "2016-06-03T10:30:42.6951710Z",
+              "version": 2
+          },
+          {
+              "authors": [
+                  {
+                      "name": "Terradue DevOps team",
+                      "uri": "https://www.terradue.com"
+                  }
+              ],
+              "created": "2016-06-03T10:30:42.7708920Z",
+              "description": "Index containing the entries of the datasets of Landsat-8 American Earth observation satellite launched on February 11, 2013. It is the eighth satellite in the Landsat program.",
+              "indexName": "landsat8",
+              "lastMigrated": "2016-06-03T10:30:42.6951710Z",
+              "version": 2
+          },
+          {
+              "authors": [
+                  {
+                      "name": "Terradue DevOps team",
+                      "uri": "https://www.terradue.com"
+                  }
+              ],
+              "created": "2016-06-03T10:30:42.7708920Z",
+              "description": "Index containing the entries of the datasets of Envisat. Envisat was launched as an Earth observation satellite. Its objective was to service the continuity of European Remote-Sensing (ERS) Satellite missions, providing additional observational parameters to improve environmental studies.",
+              "indexName": "envisat",
+              "lastMigrated": "2016-06-03T10:30:42.6951710Z",
+              "version": 2
+          },
+          {
+              "authors": [
+                  {
+                      "name": "Terradue DevOps team",
+                      "uri": "https://www.terradue.com"
+                  }
+              ],
+              "created": "2016-06-03T10:30:42.7708920Z",
+              "description": "Index containing the entries of the datasets of Sentinel-1 space mission funded by the European Union and carried out by the ESA within the Copernicus Programme.",
+              "indexName": "sentinel1",
+              "lastMigrated": "2016-06-03T10:30:42.6951710Z",
+              "version": 2
+          },
+          {
+              "authors": [
+                  {
+                      "name": "Terradue DevOps team",
+                      "uri": "https://www.terradue.com"
+                  }
+              ],
+              "created": "2016-06-03T10:30:42.7708920Z",
+              "description": "Index containing the entries of the datasets of Sentinel-2. Sentinel-2 is an Earth observation mission developed by ESA as part of the Copernicus Programme to perform terrestrial observations in support of services such as forest monitoring, land cover changes detection, and natural disaster management.",
+              "indexName": "sentinel2",
+              "lastMigrated": "2016-06-03T10:30:42.6951710Z",
+              "version": 2
+          }
       ]
-    }
+  }
 
 
 OpenSearch
@@ -43,7 +96,7 @@ The indices can be queried using :ref:`opensearch-client` with :ref:`base syndic
 
 .. code-block:: console
 
-  opensearch-client -a "ABcdEF" "https://data.terradue.com/catalogue/search" identifier
+  opensearch-client -u mrossi:ABcdEF "https://data.terradue.com/catalogue/search" identifier
 
 and the response as the identifier list
 
@@ -61,7 +114,7 @@ Indices can define subset of the entries they contain called :ref:`series`. The 
 
 .. code-block:: console
 
-    curl "https://data.terradue.com/catalogue/mrossi/eop/series/search"
+    curl "https://data.terradue.com/catalogue/mrossi/series/search"
 
 This command will return an atom feed with all the series in the indices mrossi
 
@@ -70,7 +123,7 @@ The same command with opensearch client and a few more parameter allows to find 
 
 .. code-block:: console
 
-    opensearch-client "https://data.terradue.com/catalogue/mrossi/eop/series/search" title,describes
+    opensearch-client "https://data.terradue.com/catalogue/mrossi/series/search" title,describes
 
 
 Exploring data packages in the portal

@@ -1,7 +1,7 @@
+.. _mediatype:
+
 Content Type
 ^^^^^^^^^^^^
-
-.. _mediatype:
 
 A media type is an identifier for file formats on the Internet.
 

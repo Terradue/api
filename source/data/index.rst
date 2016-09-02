@@ -11,4 +11,6 @@ Data API
    search
    download
    publication
+   storage
+   reference
 

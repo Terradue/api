@@ -1,74 +1,32 @@
 
-Publication
------------
+Storage
+-------
 
-In this part, we will discover how to publish our own entries in the catalogue.
+In this part, we will discover how to store data in the platform storage and access them.
 
-Personal index management
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Data storage
+^^^^^^^^^^^^
 
-Every user of the platform has its own index called with the username (e.g user Mario Rossi [username: mrossi] has an index called mrossi).
+Every user of the platform has its own :ref:`repository` called with the username (e.g user Mario Rossi [username: mrossi] has a repository called mrossi).
 
-This index should be created automatically when the user is registered on the T2 Cloud Platform. You can check the existence of your own index by querying the description deocument of it.
+This repository have been created automatically when the user has been registered on the T2 Cloud Platform. You can check the existence of your own repository on the Terradue portal personal profile or with the following command:
 
 .. code-block:: console
 
-  curl -u mrossi:ABcdEF "https://data.terradue.com/catalogue/mrossi/description"
+  curl -u mrossi:ABcdEF "https://store.terradue.com/mrossi"
+
+
+end returns a response similar to 
+
+
 
 
 .. note:: replace **mrossi** by your own username
 
-If by any chance, you index does not exist yet, you can simply create it by yourself with the following command.
 
-.. code-block:: console
-
-  curl -XPUT -u mrossi:ABcdEF "https://data.terradue.com/catalogue/mrossi"
+If by any chance, you index does not exist yet, please contact support@terradue.com.
 
 
-A successful command should return
-
-.. code-block:: json
-
-    {
-      "name": "mrossi_v1",
-      "shards": {
-          "total": 10,
-          "successful": 10,
-          "failed": 0
-      },
-      "types": [
-          {
-              "name": "series",
-              "version": 2,
-              "description": "Type representing a series"
-          },
-          {
-              "name": "gtfeature",
-              "version": 2,
-              "description": "Type representing a feature geo and timed"
-          },
-          {
-              "name": "eopfeature",
-              "version": 2,
-              "description": "Type representing an Earth Observation feature"
-          },
-          {
-              "name": "eopseries",
-              "version": 2,
-              "description": "Type representing a EarthObservation series"
-          },
-          {
-              "name": "eoporbit",
-              "version": 1,
-              "description": "Type representing an orbit information"
-          },
-          {
-              "name": "eoppoint",
-              "version": 2,
-              "description": "Type representing an orbit information"
-          }
-      ]
-  }
 
 Index Metadata update
 """""""""""""""""""""
@@ -361,6 +319,8 @@ The series is successfully created and we can query it
 Updating and deleting series is done using the same mechanism as per entries but inserting the /series after the index name.
 
 
+Feature Storage
+^^^^^^^^^^^^^^^
 
 
 

@@ -21,24 +21,22 @@ REST API supports three forms of authentication:
 
  - Basic authentication using your username and password.
  - Basic authentication using your username and API Key.
- - Using a dedicated header (e.g. ``X-T2-Api``) with your API Key.
-   
 
 
 Routes
 """"""
 
-Routes are semantically important, especially in the case of searching.
+Routes are semantically important, especially in the case of searching in the catalogue.
 
 .. code-block:: console
 
-    https://data.terradue.com/catalogue/mrossi/geotime/search
-    `---------------------------------´`-------------´`-----´
-                    |                         |          |
-              service base url            resource   operation
+    https://data.terradue.com/catalogue/mrossi/series/italy/search
+    `---------------------------------´`------------------´`-----´
+                    |                         |               |
+              service base url            resource        operation
 
 
-The operation part can also be absent and the HTTP verb defines it. (e.g. PUT for update)
+The operation part can also be absent and the HTTP verb defines it. (e.g. POST for creation, PUT for update)
 
 the following paragraphs summarize the different types of route of the platform
 
@@ -47,7 +45,7 @@ Data Agency - Catalogue service
 
 .. code-block:: console
 
-    https://data.terradue.com/catalogue/<indexName>/<type>[/<operation>]
+    https://data.terradue.com/catalogue/<indexName>[/series/<seriesName>][/<operation>]
 
 
 Data Agency - Storage service
@@ -55,7 +53,7 @@ Data Agency - Storage service
 
 .. code-block:: console
 
-    https://data.terradue.com/storage/<repoName>[/<folder>]/<file>.<ext>
+    https://store.terradue.com/<repoName>[/<folder>]/<file>.<ext>
 
     
 

@@ -14,7 +14,7 @@ Let's query the raw XML using curl
 
 .. code-block:: console
 
-    curl "https://data.terradue.com/catalogue/mrossi/eop/description"
+    curl "https://data.terradue.com/catalogue/mrossi/description"
 
 
 
@@ -22,7 +22,7 @@ Now, let's use opensearch-client to format it in a human readable way
 
 .. code-block:: console
 
-    opensearch-client -d "https://data.terradue.com/catalogue/mrossi/eop/description"
+    opensearch-client -d "https://data.terradue.com/catalogue/mrossi/description"
 
 
 .. code-block:: console
@@ -41,7 +41,7 @@ Now, let's use opensearch-client to format it in a human readable way
 
 .. warning:: Do not confuse query filters and properties keywords!
 
-    Even if they may have a relationship, the name used for query filters do not always correspond exactly to the properties keywords extractor used in opensearch-client.
+    Even if they may have a relationship, the name used for **query filters** do not always correspond exactly to the **properties keywords** extractor used in opensearch-client.
     For instance, when you filter on the identifier, you use the filter ``uid``, when you request the identifier, you use ``identifier``
 
 
@@ -55,14 +55,14 @@ With curl
 
 .. code-block:: console
 
-    curl "https://data.terradue.com/catalogue/mrossi/eop/search?format=atom&q=processing&bbox=60,-30,70,-20"
+    curl "https://data.terradue.com/catalogue/mrossi/search?format=atom&q=processing&bbox=60,-30,70,-20"
 
 
 The same with opensearch-client
 
 .. code-block:: console
   
-    opensearch-client -f atom -p q=processing -p bbox=60,-30,70,-20 "https://data.terradue.com/catalogue/mrossi/eop/search?format=json&q=processing&bbox=60,-30,70,-20" {}
+    opensearch-client -f atom -p q=processing -p bbox=60,-30,70,-20 "https://data.terradue.com/catalogue/mrossi/search?format=json&q=processing&bbox=60,-30,70,-20" {}
 
 
 Both previous commands will return the atom feed with the result queried.
@@ -81,6 +81,6 @@ Let's take again our previous resource and ask for the identifiers, the spatial 
 
 .. code-block:: console
 
-    opensearch-client -f atom -p q=processing -p bbox=60,-30,70,-20 "https://data.terradue.com/catalogue/mrossi/eop/search?format=json&q=processing&bbox=60,-30,70,-20" identifier,wkt,published
+    opensearch-client -f atom -p q=processing -p bbox=60,-30,70,-20 "https://data.terradue.com/catalogue/mrossi/search?format=json&q=processing&bbox=60,-30,70,-20" identifier,wkt,published
 
 

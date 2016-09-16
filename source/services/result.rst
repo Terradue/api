@@ -196,9 +196,9 @@ Then the search result should contain one entry with a png (which will be used a
 World files and properties
 ==========================
 
-When using the Cloud Sandbox provided by Terradue, the service performing the search over the results is able to read world file (**<filename>.pngw**) and generate the box and the geometry (using gdal) associated to the png.
+When using the Cloud Sandbox provided by Terradue, the service performing the search over the results is able to read world file (**<filename>.pngw**) presents in the result folder and generate the box and the geometry (using gdal) associated to the png.
 
-It also possible to provide a java properties file (key=value), named **<filename>.properties**, to give additional information which will be added into the atom entry of the associated file as metadata information.
+It also possible to add in the result folder a java properties file (key=value), named **<filename>.properties**, to give additional information about an output file of the proecess. This additional information will be added into the atom entry of the output file as metadata information.
 All keywords / value from the .properties file are added as a table to the <summary> element (used for metadata display on the geobrowser).
 Some keywords however, perform an update on the OWS context result:
 

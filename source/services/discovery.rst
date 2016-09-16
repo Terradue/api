@@ -6,9 +6,9 @@ WPS GetCapabilities
 
 The webserver offers a GetCapabilites service, presenting all Web Processing Services accessible by the current user.
 
-.. code-block:: console
+.. code-block:: http
 
-    curl -XGET "<portal_api_url>/wps/WebProcessingService?service=wps&request=GetCapabilities"
+    GET /t2api/wps/WebProcessingService?service=wps&request=GetCapabilities
 
 The webserver acts as a proxy for all Web Processing Services added by the Administrator of the Portal.
 He gather all GetCapabilities of all WPS and returns this as a GetCapabilities response. The response is conform to the WPS standard defined by OGC (http://schemas.opengis.net/wps/1.0.0).

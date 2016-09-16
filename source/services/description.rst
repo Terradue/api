@@ -6,9 +6,9 @@ WPS DescribeProcess
 
 The webserver offers a DescribeProcess service, describing a given WPS service.
 
-.. code-block:: console
+.. code-block:: http
 
-    curl -XGET "<portal_api_url>/wps/WebProcessingService?service=wps&request=DescribeProcess&version=<serviceVersion>&identifier=<service_identifier>"
+    GET t2api/wps/WebProcessingService?service=wps&request=DescribeProcess&version=<serviceVersion>&identifier=<service_identifier>
 
 The webserver acts as a proxy for all Web Processing Services added by the Administrator of the Portal.
 He gets the DescribeProcess offered by the WPS and returns it as a DescribeProcess response. The response is conform to the WPS standard defined by OGC (http://schemas.opengis.net/wps/1.0.0).

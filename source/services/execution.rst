@@ -6,9 +6,11 @@ WPS Execute
 
 The webserver offers an Execute service, requesting the execution of a job for a given WPS service.
 
-.. code-block:: console
+.. code-block:: http
 
-    curl -XPOST "<portal_api_url>/wps/WebProcessingService?service=wps&request=Execute&version=<serviceVersion>&identifier=<service_identifier>" -d "<execute_body>"
+    POST t2api/wps/WebProcessingService?service=wps&request=Execute&version=<serviceVersion>&identifier=<service_identifier>
+
+The body of the request must contain an WPS Execute object in the application/xml format.
 
 .. code-block:: xml
 	
@@ -84,9 +86,9 @@ Get Job Status
 
 The webserver offers a GetStatus service, requesting the status of an existing job ran on the platform.
 
-.. code-block:: console
+.. code-block:: http
 
-    curl -GET "<portal_api_url>/wps/RetrieveResultServlet?id=<job_id>"
+    GET t2api/wps/RetrieveResultServlet?id=<job_id>
 
 The webserver acts as a proxy for all Web Processing Services added by the Administrator of the Portal.
 He forward the GetStatus request to the WPS and returns the ExecuteResponse. The response is conform to the WPS standard defined by OGC (http://schemas.opengis.net/wps/1.0.0).

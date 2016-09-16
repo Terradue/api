@@ -148,7 +148,7 @@ Example of a process successfully completed:
 	  </ProcessOutputs>
 	</ExecuteResponse>
 
-Exmaple of a process failed:
+Example of a process failed:
 
 .. code-block:: xml
 

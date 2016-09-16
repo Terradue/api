@@ -14,26 +14,27 @@ The response should contains one Output with Identifier = **result_osd** and a R
 results files of the processing service as an atom feed. This solution is used on the Developer Cloud Sandboxes provided by Terradue.
 
 .. code-block:: xml
-
-<wps:Output>
-	<ows:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">result_osd</ows:Identifier>
-	<ows:Title xmlns:ns1="http://www.opengis.net/ows/1.1">OpenSearch Description to the Results</ows:Title>
-		<wps:Reference href="https://tep-geohazards-dev.terradue.com/t2api/proxy?url=http%3a%2f%2fsb-10-16-10-20.dev.terradue.int%2fsbws%2fwps%2fdcs-doris-ifg%2f0000023-160501000006641-oozie-oozi-W%2fresults%2fdescription" mimeType="application/opensearchdescription+xml" />
-</wps:Output> 
+	<?xml version="1.0" encoding="us-ascii"?>
+	<wps:Output>
+		<ows:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">result_osd</ows:Identifier>
+		<ows:Title xmlns:ns1="http://www.opengis.net/ows/1.1">OpenSearch Description to the Results</ows:Title>
+			<wps:Reference href="https://tep-geohazards-dev.terradue.com/t2api/proxy?url=http%3a%2f%2fsb-10-16-10-20.dev.terradue.int%2fsbws%2fwps%2fdcs-doris-ifg%2f0000023-160501000006641-oozie-oozi-W%2fresults%2fdescription" mimeType="application/opensearchdescription+xml" />
+	</wps:Output> 
 
 or (we accept also the Reference as ComplexData)
 
 .. code-block:: xml
 
-<wps:Output>
-	<ows:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">result_osd</ows:Identifier>
-	<ows:Title xmlns:ns1="http://www.opengis.net/ows/1.1">OpenSearch Description to the Results</ows:Title>
-	<wps:Data>
-		<wps:ComplexData mimeType="application/xml">
-			<wps:Reference href="https://tep-geohazards-dev.terradue.com/t2api/proxy?url=http%3a%2f%2fsb-10-16-10-20.dev.terradue.int%2fsbws%2fwps%2fdcs-doris-ifg%2f0000023-160501000006641-oozie-oozi-W%2fresults%2fdescription" mimeType="application/opensearchdescription+xml" />
-		</wps:ComplexData>
-	</wps:Data>
-</wps:Output> 
+	<?xml version="1.0" encoding="us-ascii"?>
+	<wps:Output>
+		<ows:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">result_osd</ows:Identifier>
+		<ows:Title xmlns:ns1="http://www.opengis.net/ows/1.1">OpenSearch Description to the Results</ows:Title>
+		<wps:Data>
+			<wps:ComplexData mimeType="application/xml">
+				<wps:Reference href="https://tep-geohazards-dev.terradue.com/t2api/proxy?url=http%3a%2f%2fsb-10-16-10-20.dev.terradue.int%2fsbws%2fwps%2fdcs-doris-ifg%2f0000023-160501000006641-oozie-oozi-W%2fresults%2fdescription" mimeType="application/opensearchdescription+xml" />
+			</wps:ComplexData>
+		</wps:Data>
+	</wps:Output> 
 
 result metadata
 ---------------
@@ -42,83 +43,85 @@ The response should contains one Output with Identifier = **result_metadata** an
 
 .. code-block:: xml
 
-<wps:Output>
-	<ows:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">result_metadata</ows:Identifier>
-	<ows:Title xmlns:ns1="http://www.opengis.net/ows/1.1">OpenSearch Description to the Results</ows:Title>
-		<wps:Reference href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/metadata.xml" method="GET" mimeType="application/atom+xml" />
-</wps:Output> 
+	<?xml version="1.0" encoding="us-ascii"?>
+	<wps:Output>
+		<ows:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">result_metadata</ows:Identifier>
+		<ows:Title xmlns:ns1="http://www.opengis.net/ows/1.1">OpenSearch Description to the Results</ows:Title>
+			<wps:Reference href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/metadata.xml" method="GET" mimeType="application/atom+xml" />
+	</wps:Output> 
 
 or (we accept also the Reference as ComplexData)
 
 .. code-block:: xml
 
-<wps:Output>
-	<ows:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">result_metadata</ows:Identifier>
-	<ows:Title xmlns:ns1="http://www.opengis.net/ows/1.1">OpenSearch Description to the Results</ows:Title>
-	<wps:Data>
-		<wps:ComplexData mimeType="application/xml">
-			<wps:Reference href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/metadata.xml" method="GET" mimeType="application/atom+xml" />
-		</wps:ComplexData>
-	</wps:Data>
-</wps:Output> 
+	<?xml version="1.0" encoding="us-ascii"?>
+	<wps:Output>
+		<ows:Identifier xmlns:ns1="http://www.opengis.net/ows/1.1">result_metadata</ows:Identifier>
+		<ows:Title xmlns:ns1="http://www.opengis.net/ows/1.1">OpenSearch Description to the Results</ows:Title>
+		<wps:Data>
+			<wps:ComplexData mimeType="application/xml">
+				<wps:Reference href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/metadata.xml" method="GET" mimeType="application/atom+xml" />
+			</wps:ComplexData>
+		</wps:Data>
+	</wps:Output> 
 
 example of metadata.xml
 
 .. code-block:: xml
 
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title type="text">Discovery feed for WPS result local data</title>
-  <subtitle type="text">This OpenSearch Service allows the discovery of the different items which are part of the localdata collection. This search service is in accordance with the OGC 10-032r3 specification.</subtitle>
-  <generator>Terradue Web Server</generator>
-  <entry>
-    <id>AATSR_output.png</id>
-    <title type="text">AATSR_output.png</title>
-    <published>2016-06-15T10:27:30.711606Z</published>
-    <updated>2016-06-15T10:27:30.711606Z</updated>
-    <link href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/AATSR_output.png?op=OPEN" rel="enclosure" type="application/octet-stream"/>
-    <identifier xmlns="http://purl.org/dc/elements/1.1/">AATSR_output.png</identifier>
-    <where xmlns="http://www.georss.org/georss/10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <Polygon xmlns="http://www.opengis.net/gml">
-        <exterior>
-          <LinearRing>
-            <posList srsDimension="2">30.5009918 0.9953687 30.5009918 -4.2681770 35.9339877 -4.2681770 35.9339877 0.9953687 30.5009918 0.9953687</posList>
-          </LinearRing>
-        </exterior>
-      </Polygon>
-    </where>
-    <box xmlns="http://www.georss.org/georss">30.5009918 -4.2681770 35.9339877 0.9953687</box>
-    <offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/owc/1.0" code="http://www.opengis.net/spec/owc-atom/1.0/req/png">
-      <content href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/AATSR_output.png?op=OPEN" type="image/png" />
-    </offering>
-  </entry>
-  <entry>
-        <id>http://sb-10-15-36-17/HEP_tests/qgis_outputs/AATSR_output.tif</id>
-    <title type="text">AATSR_output.tif</title>
-        <published>2016-06-15T10:27:30.711606Z</published>
-    <updated>2016-06-15T10:27:30.711606Z</updated>
-    <link href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/AATSR_output.tif?op=OPEN" rel="enclosure" type="application/octet-stream"/>
-    <identifier xmlns="http://purl.org/dc/elements/1.1/">AATSR_output.tif</identifier>
-    <where xmlns="http://www.georss.org/georss/10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <Polygon xmlns="http://www.opengis.net/gml">
-        <exterior>
-          <LinearRing>
-            <posList srsDimension="2">30.5009918 0.9953687 30.5009918 -4.2681770 35.9339877 -4.2681770 35.9339877 0.9953687 30.5009918 0.9953687</posList>
-          </LinearRing>
-        </exterior>
-      </Polygon>
-    </where>
-    <box xmlns="http://www.georss.org/georss">30.5009918 -4.2681770 35.9339877 0.9953687</box>
-    <offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/owc/1.0" code="http://www.opengis.net/spec/owc-atom/1.0/req/png">
-      <content href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/AATSR_output.tif?op=OPEN" type="image/tif" />
-      </offering>
-  </entry>
-  <identifier xmlns="http://purl.org/dc/elements/1.1/">localdata</identifier>
-  <queryTime xmlns="http://purl.org/dc/elements/1.1/">0.0002</queryTime>
-  <startIndex xmlns="http://a9.com/-/spec/opensearch/1.1/">1</startIndex>
-  <itemsPerPage xmlns="http://a9.com/-/spec/opensearch/1.1/">50</itemsPerPage>
-  <os:Query os:count="50" os:language="" os:searchTerms="" os:startIndex="" os:startPage="" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:param="http://a9.com/-/spec/opensearch/extensions/parameters/1.0/"/>
-</feed>
+	<?xml version="1.0" encoding="utf-8"?>
+	<feed xmlns="http://www.w3.org/2005/Atom">
+	  <title type="text">Discovery feed for WPS result local data</title>
+	  <subtitle type="text">This OpenSearch Service allows the discovery of the different items which are part of the localdata collection. This search service is in accordance with the OGC 10-032r3 specification.</subtitle>
+	  <generator>Terradue Web Server</generator>
+	  <entry>
+	    <id>AATSR_output.png</id>
+	    <title type="text">AATSR_output.png</title>
+	    <published>2016-06-15T10:27:30.711606Z</published>
+	    <updated>2016-06-15T10:27:30.711606Z</updated>
+	    <link href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/AATSR_output.png?op=OPEN" rel="enclosure" type="application/octet-stream"/>
+	    <identifier xmlns="http://purl.org/dc/elements/1.1/">AATSR_output.png</identifier>
+	    <where xmlns="http://www.georss.org/georss/10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	      <Polygon xmlns="http://www.opengis.net/gml">
+	        <exterior>
+	          <LinearRing>
+	            <posList srsDimension="2">30.5009918 0.9953687 30.5009918 -4.2681770 35.9339877 -4.2681770 35.9339877 0.9953687 30.5009918 0.9953687</posList>
+	          </LinearRing>
+	        </exterior>
+	      </Polygon>
+	    </where>
+	    <box xmlns="http://www.georss.org/georss">30.5009918 -4.2681770 35.9339877 0.9953687</box>
+	    <offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/owc/1.0" code="http://www.opengis.net/spec/owc-atom/1.0/req/png">
+	      <content href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/AATSR_output.png?op=OPEN" type="image/png" />
+	    </offering>
+	  </entry>
+	  <entry>
+	        <id>http://sb-10-15-36-17/HEP_tests/qgis_outputs/AATSR_output.tif</id>
+	    <title type="text">AATSR_output.tif</title>
+	        <published>2016-06-15T10:27:30.711606Z</published>
+	    <updated>2016-06-15T10:27:30.711606Z</updated>
+	    <link href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/AATSR_output.tif?op=OPEN" rel="enclosure" type="application/octet-stream"/>
+	    <identifier xmlns="http://purl.org/dc/elements/1.1/">AATSR_output.tif</identifier>
+	    <where xmlns="http://www.georss.org/georss/10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	      <Polygon xmlns="http://www.opengis.net/gml">
+	        <exterior>
+	          <LinearRing>
+	            <posList srsDimension="2">30.5009918 0.9953687 30.5009918 -4.2681770 35.9339877 -4.2681770 35.9339877 0.9953687 30.5009918 0.9953687</posList>
+	          </LinearRing>
+	        </exterior>
+	      </Polygon>
+	    </where>
+	    <box xmlns="http://www.georss.org/georss">30.5009918 -4.2681770 35.9339877 0.9953687</box>
+	    <offering xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/owc/1.0" code="http://www.opengis.net/spec/owc-atom/1.0/req/png">
+	      <content href="http://sb-10-15-36-17.hydro.terradue.int/wpsoutputs/AATSR_output.tif?op=OPEN" type="image/tif" />
+	      </offering>
+	  </entry>
+	  <identifier xmlns="http://purl.org/dc/elements/1.1/">localdata</identifier>
+	  <queryTime xmlns="http://purl.org/dc/elements/1.1/">0.0002</queryTime>
+	  <startIndex xmlns="http://a9.com/-/spec/opensearch/1.1/">1</startIndex>
+	  <itemsPerPage xmlns="http://a9.com/-/spec/opensearch/1.1/">50</itemsPerPage>
+	  <os:Query os:count="50" os:language="" os:searchTerms="" os:startIndex="" os:startPage="" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:param="http://a9.com/-/spec/opensearch/extensions/parameters/1.0/"/>
+	</feed>
 
 result metalink (list of files)
 -------------------------------
@@ -127,32 +130,33 @@ The response should contains one Output with a **metalink** element, containing 
 
 .. code-block:: xml
 
-<wps:Output>
-	<ows:Identifier>ResultDescription</ows:Identifier>
-	<ows:Title>List of output files produced by the process</ows:Title>
-	<wps:Data>
-		<wps:ComplexData>
-			<metalink xmlns="http://www.metalinker.org" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#" version="3.0" type="dynamic">
-				<files>
-					<file name="http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/1">
-						<releasedate>2016-05-12T08:56:21Z</releasedate>
-						<identity>http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/1</identity>
-						<resources>
-							<url type="http">http://gpod.eo.esa.int/results/5833f9b6-721f-47db-8b6c-c9e4278b24a9/ASA_IM__0CNPAM20050615_204642_000000152038_00129_17217_2705.autof</url>
-						</resources>
-					</file>
-					<file name="http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/2">
-						<releasedate>2016-05-12T08:56:21Z</releasedate>
-						<identity>http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/2</identity>
-						<resources>
-							<url type="http">http://gpod.eo.esa.int/results/5833f9b6-721f-47db-8b6c-c9e4278b24a9/ASA_IM__0CNPAM20050615_204642_000000152038_00129_17217_2705.azsp</url>
-						</resources>
-					</file>
-				</files>
-			</metalink>
-		</wps:ComplexData>
-	</wps:Data>
-</wps:Output>
+	<?xml version="1.0" encoding="us-ascii"?>
+	<wps:Output>
+		<ows:Identifier>ResultDescription</ows:Identifier>
+		<ows:Title>List of output files produced by the process</ows:Title>
+		<wps:Data>
+			<wps:ComplexData>
+				<metalink xmlns="http://www.metalinker.org" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#" version="3.0" type="dynamic">
+					<files>
+						<file name="http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/1">
+							<releasedate>2016-05-12T08:56:21Z</releasedate>
+							<identity>http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/1</identity>
+							<resources>
+								<url type="http">http://gpod.eo.esa.int/results/5833f9b6-721f-47db-8b6c-c9e4278b24a9/ASA_IM__0CNPAM20050615_204642_000000152038_00129_17217_2705.autof</url>
+							</resources>
+						</file>
+						<file name="http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/2">
+							<releasedate>2016-05-12T08:56:21Z</releasedate>
+							<identity>http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/2</identity>
+							<resources>
+								<url type="http">http://gpod.eo.esa.int/results/5833f9b6-721f-47db-8b6c-c9e4278b24a9/ASA_IM__0CNPAM20050615_204642_000000152038_00129_17217_2705.azsp</url>
+							</resources>
+						</file>
+					</files>
+				</metalink>
+			</wps:ComplexData>
+		</wps:Data>
+	</wps:Output>
 
 result metalink (atom entry)
 ----------------------------
@@ -161,25 +165,26 @@ The response should contains one Output with a **metalink** element, containing 
 
 .. code-block:: xml
 
-<wps:Output>
-	<ows:Identifier>ResultDescription</ows:Identifier>
-	<ows:Title>List of output files produced by the process</ows:Title>
-	<wps:Data>
-		<wps:ComplexData>
-			<metalink xmlns="http://www.metalinker.org" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#" version="3.0" type="dynamic">
-				<files>
-					<file name="http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/1">
-						<releasedate>2016-05-12T08:56:21Z</releasedate>
-						<identity>http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/1</identity>
-						<resources>
-							<url type="http">http://gpod.eo.esa.int/results/5833f9b6-721f-47db-8b6c-c9e4278b24a9/ASA_IM__0CNPAM20050615_204642_000000152038_00129_17217_2705.atom</url>
-						</resources>
-					</file>
-				</files>
-			</metalink>
-		</wps:ComplexData>
-	</wps:Data>
-</wps:Output>
+	<?xml version="1.0" encoding="us-ascii"?>
+	<wps:Output>
+		<ows:Identifier>ResultDescription</ows:Identifier>
+		<ows:Title>List of output files produced by the process</ows:Title>
+		<wps:Data>
+			<wps:ComplexData>
+				<metalink xmlns="http://www.metalinker.org" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:ws="http://dclite4g.xmlns.com/ws.rdf#" version="3.0" type="dynamic">
+					<files>
+						<file name="http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/1">
+							<releasedate>2016-05-12T08:56:21Z</releasedate>
+							<identity>http://gpod.eo.esa.int/5833f9b6-721f-47db-8b6c-c9e4278b24a9/1</identity>
+							<resources>
+								<url type="http">http://gpod.eo.esa.int/results/5833f9b6-721f-47db-8b6c-c9e4278b24a9/ASA_IM__0CNPAM20050615_204642_000000152038_00129_17217_2705.atom</url>
+							</resources>
+						</file>
+					</files>
+				</metalink>
+			</wps:ComplexData>
+		</wps:Data>
+	</wps:Output>
 
 Visualize results of a processing job
 =====================================

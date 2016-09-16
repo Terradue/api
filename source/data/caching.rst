@@ -35,6 +35,8 @@ Some curl parametrs here are important to understand:
   - ``-m 10`` This optional srgument instructs curl that this operation shall not take more than 10 seconds. If we do not want to wait for the result of the caching, we can use this argument to close the connection to the server after a certain time. The data gateway keeps anyway caching the data.
 
 
+.. note:: If the request above answers directly with a HTTP 200 response. It means the data is already cached and ready to download.
+
 
 
 

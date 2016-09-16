@@ -17,7 +17,7 @@ Authentication
 
 One of most important parameter to set in those REST commands is your API key which is configured in your profile page in the portal.
 
-REST API supports three forms of authentication:
+REST API supports two forms of authentication:
 
  - Basic authentication using your username and password.
  - Basic authentication using your username and API Key.
@@ -30,15 +30,16 @@ Routes are semantically important, especially in the case of searching in the ca
 
 .. code-block:: console
 
-    https://data.terradue.com/catalogue/mrossi/series/italy/search
-    `---------------------------------´`------------------´`-----´
-                    |                         |               |
-              service base url            resource        operation
+    https://catalog.terradue.com/mrossi/series/italy/search
+    `--------------------------´`------------------´`-----´
+                    |                  |               |
+              service base url     resource        operation
 
 
 The operation part can also be absent and the HTTP verb defines it. (e.g. POST for creation, PUT for update)
 
 the following paragraphs summarize the different types of route of the platform
+
 
 Data Agency - Catalogue service
 '''''''''''''''''''''''''''''''

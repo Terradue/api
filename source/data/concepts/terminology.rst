@@ -83,7 +83,13 @@ In the :ref:`Data Agency <dataagency>`, this is the module that hosts the servic
 Repository
 """"""""""
 
-This is the storage unit for uploading and downloading data files in the :ref:`storage`. As per the indinces, for instance, there is a repository for Sentinel-1 data, another index for Landsat-8 data, and yet another index for your own data. A repository is identified by a name (that must be all lowercase) and this name is used to refer to the repository when performing upload, download and delete operations against the data files in it. Repository names are unique in the cluster where they are hosted. 
+This is the storage unit for uploading and downloading data files to/from the :ref:`storage`. As per the indices, there is a repository for Sentinel-1 data, another index for Landsat-8 data, and yet another index for your own data. A repository is identified by a name (that must be all lowercase) and this name is used to refer to the repository when performing upload, download and delete operations against the data files in it. Repository names are unique in the cluster where they are hosted. 
+
+There are 3 types of repositories:
+
+  - **Local** repository: It is a storage unit where data are located on the :ref:`cluster`. this is the usual type of repository for users, groups or community laboratories,
+  - **Remote** repository: It acts as a proxy for another third-party data source and abstract the access to this source as a repository,
+  - **Virtual** repository: This is an aggregation of any types of repository in a single one.
 
 
 .. _dataset:

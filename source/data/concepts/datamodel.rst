@@ -32,15 +32,15 @@ Atom is specifically designed to never lose any data. To see this, let's take a 
   <?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
     <title type="text">Query Result</title>
-    <id>https://data.terradue.com/eop/scihub/dataset/search?count=1&amp;format=atom</id>
+    <id>https://catalog.terradue.com/sentinel1/search?count=1&amp;format=atom</id>
     <updated>2015-09-10T15:35:50.810201Z</updated>
-    <link rel="self" type="application/atom+xml" title="Reference link" href="https://data.terradue.com/eop/scihub/dataset/search?count=1&amp;format=atom" />
-    <link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="https://data.terradue.com/eop/scihub/dataset/description" />
+    <link rel="self" type="application/atom+xml" title="Reference link" href="https://catalog.terradue.com/sentinel1/search?count=1&amp;format=atom" />
+    <link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="https://catalog.terradue.com/sentinel1/description" />
     <author>
         <name>Terradue</name>
       </author>
     <entry>
-      <id>https://data.terradue.com/eop/scihub/dataset/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406</id>
+      <id>https://catalog.terradue.com/sentinel1/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406</id>
       <title type="text">S1A GRD IW_DP L1 VV, VH 15 141205T051621-141205T051633</title>
       <summary type="html">
         <table> <tbody> <table> <tr>  <td><strong>Swath</strong></td><td>IW</td>  </tr><tr> <td><strong>Orbit</strong></td><td>3587 ASCENDING</td>  </tr><tr> <td><strong>Track</strong></td><td>15</td>  </tr><tr> <td><strong>Start</strong></td><td>2014-12-05T16:16:21.5300370Z</td>  </tr><tr> <td><strong>End</strong></td><td>2014-12-05T16:16:33.4265590Z</td>  </tr> </table>  </tbody></table>
@@ -48,7 +48,7 @@ Atom is specifically designed to never lose any data. To see this, let's take a 
       <published>2014-12-05T20:58:38.024Z</published>
       <updated>2014-12-05T20:58:38.024Z</updated>
       <link rel="enclosure" type="application/octet-stream" length="809403257" href="https://scihub.esa.int/dhus/odata/v1/Products('7206812c-d9cf-485c-89b3-f03a214be924')/$value" />
-      <link rel="self" type="application/atom+xml" title="Reference link" href="https://data.terradue.com/eop/scihub/dataset/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406" />
+      <link rel="self" type="application/atom+xml" title="Reference link" href="https://catalog.terradue.com/sentinel1/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406" />
       <identifier xmlns="http://purl.org/dc/elements/1.1/">S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406</identifier>
     </entry>
     <queryTime xmlns="http://purl.org/dc/elements/1.1/">1</queryTime>
@@ -80,7 +80,7 @@ In atom representation, here is the previous Atom entry example supplemented wit
 
   <entry>
     <id>
-      https://data.terradue.com/eop/scihub/dataset/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406
+      https://catalog.terradue.com/sentinel1/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406
     </id>
     <title type="text">S1A GRD IW_DP L1 VV, VH 15 141205T051621-141205T051633</title>
     <summary type="html">
@@ -89,9 +89,9 @@ In atom representation, here is the previous Atom entry example supplemented wit
     <published>2014-12-05T20:58:38.024Z</published>
     <updated>2014-12-05T20:58:38.024Z</updated>
     <link rel="enclosure" type="application/octet-stream" length="809403257" href="https://scihub.esa.int/dhus/odata/v1/Products('7206812c-d9cf-485c-89b3-f03a214be924')/$value" />
-    <link rel="self" type="application/atom+xml" title="Reference link" href="https://data.terradue.com/eop/scihub/dataset/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406" />
-    <link rel="alternate" type="application/xml" title="EOP profile" href="https://data2.terradue.com/eop/scihub/profile/xml?uid=S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406" />
-    <link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="https://data.terradue.com/eop/scihub/dataset/description" />
+    <link rel="self" type="application/atom+xml" title="Reference link" href="https://catalog.terradue.com/sentinel1/search?format=atom&amp;uid=S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406" />
+    <link rel="alternate" type="application/xml" title="EOP profile" href="https://catalog.terradue.com/eop/sentinel1/profile/xml?uid=S1A_IW_GRDH_1SDV_20141205T171621_20141205T171633_003587_0043C4_3406" />
+    <link rel="search" type="application/opensearchdescription+xml" title="OpenSearch Description link" href="https://catalog.terradue.com/sentinel1/description" />
     <where xmlns="http://www.georss.org/georss">
       <MultiSurface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opengis.net/gml/3.2">
         <surfaceMembers>

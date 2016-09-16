@@ -14,7 +14,7 @@ Let's query the raw XML using curl
 
 .. code-block:: console
 
-    curl "https://data.terradue.com/catalogue/mrossi/description"
+    curl "https://catalog.terradue.com/mrossi/description"
 
 
 
@@ -22,7 +22,7 @@ Now, let's use opensearch-client to format it in a human readable way
 
 .. code-block:: console
 
-    opensearch-client -d "https://data.terradue.com/catalogue/mrossi/description"
+    opensearch-client -d "https://catalog.terradue.com/mrossi/description"
 
 
 .. code-block:: console
@@ -55,14 +55,14 @@ With curl
 
 .. code-block:: console
 
-    curl "https://data.terradue.com/catalogue/mrossi/search?format=atom&q=processing&bbox=60,-30,70,-20"
+    curl "https://catalog.terradue.com/mrossi/search?format=atom&q=processing&bbox=60,-30,70,-20"
 
 
 The same with opensearch-client
 
 .. code-block:: console
   
-    opensearch-client -f atom -p q=processing -p bbox=60,-30,70,-20 "https://data.terradue.com/catalogue/mrossi/search?format=json&q=processing&bbox=60,-30,70,-20" {}
+    opensearch-client -f atom -p q=processing -p bbox=60,-30,70,-20 "https://catalog.terradue.com/mrossi/search?format=json&q=processing&bbox=60,-30,70,-20" {}
 
 
 Both previous commands will return the atom feed with the result queried.
@@ -81,6 +81,6 @@ Let's take again our previous resource and ask for the identifiers, the spatial 
 
 .. code-block:: console
 
-    opensearch-client -f atom -p q=processing -p bbox=60,-30,70,-20 "https://data.terradue.com/catalogue/mrossi/search?format=json&q=processing&bbox=60,-30,70,-20" identifier,wkt,published
+    opensearch-client -f atom -p q=processing -p bbox=60,-30,70,-20 "https://catalog.terradue.com/mrossi/search?format=json&q=processing&bbox=60,-30,70,-20" identifier,wkt,published
 
 

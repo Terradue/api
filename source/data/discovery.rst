@@ -12,7 +12,7 @@ Simple json
 
 .. code-block:: console
 
-  curl -u mrossi:ABcdEF "https://data.terradue.com/catalogue"
+  curl -u mrossi:ABcdEF "https://catalog.terradue.com"
 
 and the response as simple json
 
@@ -96,7 +96,7 @@ The indices can be queried using :ref:`opensearch-client` with :ref:`base syndic
 
 .. code-block:: console
 
-  opensearch-client -u mrossi:ABcdEF "https://data.terradue.com/catalogue/search" identifier
+  opensearch-client -u mrossi:ABcdEF "https://catalog.terradue.com/search" identifier
 
 and the response as the identifier list
 
@@ -114,7 +114,7 @@ Indices can define subset of the entries they contain called :ref:`series`. The 
 
 .. code-block:: console
 
-    curl "https://data.terradue.com/catalogue/mrossi/series/search"
+    curl "https://catalog.terradue.com/mrossi/series/search"
 
 This command will return an atom feed with all the series in the indices mrossi
 
@@ -123,7 +123,7 @@ The same command with opensearch client and a few more parameter allows to find 
 
 .. code-block:: console
 
-    opensearch-client "https://data.terradue.com/catalogue/mrossi/series/search" title,describes
+    opensearch-client "https://catalog.terradue.com/mrossi/series/search" title,describes
 
 
 Exploring data packages in the portal

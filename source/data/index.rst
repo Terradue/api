@@ -12,5 +12,6 @@ Data API
    download
    publication
    storage
+   caching
    reference
 

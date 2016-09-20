@@ -1,8 +1,11 @@
 Discovery
-~~~~~~~~~
+---------
+
+
+
 
 WPS GetCapabilities
-===================
+^^^^^^^^^^^^^^^^^^^
 
 The webserver offers a GetCapabilites service, presenting all Web Processing Services accessible by the current user.
 

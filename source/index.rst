@@ -7,9 +7,9 @@ Welcome to Terradue Cloud Platform API's documentation!
 =======================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
-   intro/index
+   overview/index
    data/index 
    services/index
    development/index
@@ -22,3 +22,6 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+
+
+.. |portal_url| replace:: https://www.terradue.com/t2api

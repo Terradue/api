@@ -9,9 +9,9 @@
 	</parent>
 
 	<groupId>com.terradue.doc</groupId>
-	<artifactId>esa-tep-urban-api</artifactId>
+	<artifactId>t2-api</artifactId>
 	<packaging>rpm</packaging>
-	<description>Urban Thematic Exploitation Platform API</description>
+	<description>Terradue Cloud Platform Platform API</description>
 	<version>1.0-SNAPSHOT</version>
 
 
@@ -78,7 +78,7 @@
 							<executable>pdflatex</executable>
 							<arguments>
 								<argument>-interaction=nonstopmode</argument>
-								<argument>UrbanTEP-API.tex</argument>
+								<argument>T2API.tex</argument>
 							</arguments>
 							<successCodes>
                     <successCode>0</successCode>
@@ -97,7 +97,7 @@
 							<executable>pdflatex</executable>
 							<arguments>
 								<argument>-interaction=nonstopmode</argument>
-								<argument>UrbanTEP-API.tex</argument>
+								<argument>T2API.tex</argument>
 							</arguments>
 							<successCodes>
                     <successCode>0</successCode>
@@ -116,7 +116,7 @@
 							<executable>pdflatex</executable>
 							<arguments>
 								<argument>-interaction=nonstopmode</argument>
-								<argument>UrbanTEP-API.tex</argument>
+								<argument>T2API.tex</argument>
 							</arguments>
 							<successCodes>
                     <successCode>0</successCode>
@@ -166,7 +166,7 @@
 					</defineStatements>
 					<mappings>
 						<mapping>
-							<directory>/var/www/html/esa-tep-urban-api/</directory>
+							<directory>/var/www/html/t2-api/</directory>
 							<filemode>755</filemode>
 							<sources>
 								<source>

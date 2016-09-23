@@ -189,9 +189,28 @@ The response should contains one Output with a **metalink** element, containing 
 Visualize results of a processing job
 =====================================
 
+List of entries
+---------------
+
 To be visualized into the geobrowser, a job processing should expose an opensearch description in the Execute response of the status location url.
 The Execute response can directly have a description link associated (see `result osd`_). Otherwise, the webserver will be used as a proxy to enable an opensearch request over the results (see `Search amongst results of a processing job`_).
 Then the search result should contain one entry with a png (which will be used as quicklook) and an associated spatial element (**box** (MANDATORY), **where** or **spatial**).
+
+Entry metadata
+--------------
+
+The geobrowser can display a popup on the geobrowser when an entry is selected. The popup will contain the following elements:
+
+- title : taken from the id of the entry
+- published date: taken from the <published> date of the entry
+- summary : taken from the <summary> element of the entry (table in HTML format is recomanded)
+- files to download : taken from the <link rel="enclosure" href="FILE_URL"> elements of the entry
+
+Use entry as input of another service
+-------------------------------------
+
+To use one entry has input of another service, the user will simply drag and drop the entry into the input field of the service.
+The value used will be the value (FILE_URL) found in the <link rel="self" href="FILE_URL"> element of the entry.
 
 World files and properties
 ==========================

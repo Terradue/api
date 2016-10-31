@@ -1,3 +1,5 @@
+.. _devapi :
+
 
 Development
 ===========
@@ -5,8 +7,8 @@ Development
 .. toctree::
    :maxdepth: 2
 
-Service Descriptor XML
-^^^^^^^^^^^^^^^^^^^^^^
+   concepts/index
+   dcs
+   packaging
+   
 
-Software Packaging (Docker)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^

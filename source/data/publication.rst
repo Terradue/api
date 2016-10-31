@@ -13,7 +13,7 @@ This index should be created automatically when the user is registered on the T2
 
 .. code-block:: console
 
-  curl -u mrossi:ABcdEF "https://data.terradue.com/catalogue/mrossi/description"
+  curl -u mrossi:ABcdEF "https://catalogue.terradue.com/mrossi/description"
 
 
 .. note:: replace **mrossi** by your own username
@@ -22,7 +22,7 @@ If by any chance, you index does not exist yet, you can simply create it by your
 
 .. code-block:: console
 
-  curl -XPUT -u mrossi:ABcdEF "https://data.terradue.com/catalogue/mrossi"
+  curl -XPUT -u mrossi:ABcdEF "https://catalogue.terradue.com/mrossi"
 
 
 A successful command should return
@@ -186,7 +186,7 @@ Now we have our file we can send it to the catalogue for indexing.
 
 .. code-block:: console
 
-  curl -u mrossi:ABcdEF -XPOST -H "Content-Type: application/atom+xml" -d@myfirstfeed.atom "https://data.terradue.com/catalogue/mrossi"
+  curl -u mrossi:ABcdEF -XPOST -H "Content-Type: application/atom+xml" -d@myfirstfeed.atom "https://catalog.terradue.com/mrossi"
 
 
 .. note:: Please note the ``Content-Type`` header set to ``application/atom+xml``. This is important to indicate the catalogue the :ref:`mediatype` of the feed posted.
@@ -216,14 +216,14 @@ This command returns the same feed you just sent (with some more information of 
 
 .. code-block:: console
 
-    curl -u mrossi:ABcdEF "https://data.terradue.com/catalogue/mrossi/search?uid=S2A_OPER_MSI_L1C_TL_SGS__20160625T170310_A005267_T32TQM_N02.04"
+    curl -u mrossi:ABcdEF "https://catalog.terradue.com/mrossi/search?uid=S2A_OPER_MSI_L1C_TL_SGS__20160625T170310_A005267_T32TQM_N02.04"
 
 
 This command using opensearch-client makes a temporal and spatial search and return the download link correctly
 
 .. code-block:: console
 
-    opensearch-client -u mrossi:ABcdEF -p bbox=10,40,12,42 -p start=2016-06-24 -p stop=2016-06-26 "https://data.terradue.com/catalogue/mrossi/search" enclosure
+    opensearch-client -u mrossi:ABcdEF -p bbox=10,40,12,42 -p start=2016-06-24 -p stop=2016-06-26 "https://catalog.terradue.com/mrossi/search" enclosure
 
 
 .. note:: The above example showed the insertion of one entry at a time but remember that you can send as many entries in the same feed as you want. There is only a limit of 32Mbytes maximum by feed sent.
@@ -260,7 +260,7 @@ To delete a single entry by reference:
 
 .. code-block:: console
 
-    curl -u mrossi:ABcdEF -X DELETE "https://data.terradue.com/catalogue/mrossi/query?S2A_OPER_MSI_L1C_TL_SGS__20160625T170310_A005267_T32TQM_N02.04
+    curl -u mrossi:ABcdEF -X DELETE "https://catalog.terradue.com/mrossi/query?S2A_OPER_MSI_L1C_TL_SGS__20160625T170310_A005267_T32TQM_N02.04
 
 
 and it returns :
@@ -286,7 +286,7 @@ To delete many entries by query (e.g. all data of 2012):
 
 .. code-block:: console
 
-    curl -u mrossi:ABcdEF -X DELETE "https://data.terradue.com/catalogue/mrossi/query?start=2012-01-01&stop=2012-12-31
+    curl -u mrossi:ABcdEF -X DELETE "https://catalog.terradue.com/mrossi/query?start=2012-01-01&stop=2012-12-31
 
 
 
@@ -308,7 +308,7 @@ It is also possible to create set of index entries based on common fixed paramet
         <id>series1</id>
         <title type="text">Data over Italy</title>
         <published>2016-06-03T10:30:45.879747Z</published>
-        <link rel="describedBy" type="application/atom+xml" title="search filters for Italy AOI" href="https://data.terradue.com/catalogue/mrossi/search?geom=POLYGON((6.372 47.01,19.028 47.01,18.896 36.527,6.46 36.598,6.372 47.01))" />
+        <link rel="describedBy" type="application/atom+xml" title="search filters for Italy AOI" href="https://catalog.terradue.com/mrossi/search?geom=POLYGON((6.372 47.01,19.028 47.01,18.896 36.527,6.46 36.598,6.372 47.01))" />
         <identifier xmlns="http://purl.org/dc/elements/1.1/">italy</identifier>
       </entry>
     </feed>
@@ -320,7 +320,7 @@ The description of the elements done in the :ref:`datacreateentries` section are
   
 .. code-block:: console
 
-    https://data.terradue.com/catalogue/mrossi/search?geom=POLYGON((6.372 47.01,19.028 47.01,18.896 36.527,6.46 36.598,6.372 47.01))
+    https://catalog.terradue.com/mrossi/search?geom=POLYGON((6.372 47.01,19.028 47.01,18.896 36.527,6.46 36.598,6.372 47.01))
 
 
 this link is a spatial filter request. All index entries returned by this query will be part of the series.
@@ -329,7 +329,7 @@ Now, let's post the series in the catalogue with the following command
 
 .. code-block:: console
 
-  curl -u mrossi:ABcdEF -XPOST -H "Content-Type: application/atom+xml" -d@seriesitaly.atom "https://data.terradue.com/catalogue/mrossi/series"
+  curl -u mrossi:ABcdEF -XPOST -H "Content-Type: application/atom+xml" -d@seriesitaly.atom "https://catalog.terradue.com/mrossi/series"
 
 
 and returns
@@ -355,7 +355,7 @@ The series is successfully created and we can query it
 
 .. code-block:: console
 
-    opensearch-client https://data.terradue.com/catalogue/mrossi/series/italy/search
+    opensearch-client https://catalog.terradue.com/mrossi/series/italy/search
 
 
 Updating and deleting series is done using the same mechanism as per entries but inserting the /series after the index name.

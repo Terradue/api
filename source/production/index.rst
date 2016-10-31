@@ -1,12 +1,14 @@
-
-Service API
-===========
+.. _productionapi :
 
 
-The Service API covers many use cases for the usage of the processing service of the platform. They are described in the following diagram.
+Production API
+==============
+
+
+The Production API covers many use cases for the usage of the processing service of the platform. They are described in the following diagram.
 
 .. uml::
-  :caption: Services API use cases
+  :caption: Production API use cases
 
    !include includes/skins.iuml
 
@@ -18,7 +20,7 @@ The Service API covers many use cases for the usage of the processing service of
    rectangle user {
      (Discover Providers) as UCDP
      User -> UCDP
-     (Describe Services) as UCDS
+     (Describe Processing Services) as UCDS
      User -> UCDS
      (Execute Process) as UCEP
      User -> UCEP
@@ -29,7 +31,7 @@ The Service API covers many use cases for the usage of the processing service of
    rectangle provider {
      (Register as a Provider) as UCRP
      UCRP <- Provider
-     (Expose Services) as UCES
+     (Expose Processing Services) as UCES
      UCES <- Provider
      (Deliver Results) as UCDR
      UCDR <- Provider
@@ -40,21 +42,31 @@ The Service API covers many use cases for the usage of the processing service of
    UCEP .. UCDR
 
 
-As shown in previous diagram they are mainly 2 actors:
+As shown in previous diagram there are mainly 2 actors:
 
 - **Service User** that discovers the service Available via the portal API,
 - **Service Provider** that promote services and deliver processing results via the portal API.
+
+
+So far, the interface to provide a processing service is via Web Processing Service (WPS) [#OGCWPS]_
 
 
 
 .. toctree::
    :maxdepth: 2
 
-   providerdiscovery
-   servicedescription
+   concepts/index
+   serviceprovider
+   providingwps
    processexecution
-   providerregister
-   servicesexposition
    resultdelivery
+   usingwps
    
+   
+   
+   
+
+.. rubric:: Footnotes
+
+.. [#OGCWPS] http://www.opengeospatial.org/standards/wps
 

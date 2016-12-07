@@ -46,7 +46,7 @@ Data Agency - Catalogue service
 
 .. code-block:: console
 
-    https://data.terradue.com/catalogue/<indexName>[/series/<seriesName>][/<operation>]
+    https://catalog.terradue.com/<indexName>[/series/<seriesName>][/<operation>]
 
 
 Data Agency - Storage service
@@ -54,7 +54,7 @@ Data Agency - Storage service
 
 .. code-block:: console
 
-    https://store.terradue.com/<repoName>[/<folder>]/<file>.<ext>
+    https://store.terradue.com/<repoName>[/<folder>*]/<file>.<ext>
 
     
 

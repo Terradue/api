@@ -11,8 +11,9 @@ Welcome to Terradue Cloud Platform API's documentation!
 
    overview/index
    data/index 
-   services/index
+   production/index
    development/index
+   accounting/index
 
 
 Indices and tables

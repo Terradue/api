@@ -2,22 +2,15 @@
 Overview
 ========
 
-Terradue Cloud Platform concepts
---------------------------------
-
-
-Services
---------
 
 
 
-API
----
+.. toctree::
+   :maxdepth: 2
 
-REST
-^^^^
+   resources
+   security
 
-OGC
-^^^
+
 
 

@@ -1,69 +1,27 @@
-Execution
-~~~~~~~~~
+.. _processexecution :
 
-WPS Execute
-===========
+Process Execution
+-----------------
 
-The webserver offers an Execute service, requesting the execution of a job for a given WPS service.
+This operation of the WPS is probably the most important one, especially for the input and output format and defintion that requires some specific elements to be properly integrated with the platform.
+
+
+Execute Operation
+^^^^^^^^^^^^^^^^^
+	
+The WPS service must implement the execute interface with the submission of parameters in HTTP POST.
 
 .. code-block:: http
 
-    POST t2api/wps/WebProcessingService?service=wps&request=Execute&version=<serviceVersion>&identifier=<service_identifier>
+    POST ../<WebProcessingService>?service=wps&request=Execute&version=<serviceVersion>&identifier=<service_identifier>
 
 The body of the request must contain an WPS Execute object in the application/xml format.
 
-.. code-block:: xml
-	
-	<wps:Execute service="WPS" version="1.0.0" xmlns="http://www.opengis.net/wps/1.0.0" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:wcs="http://www.opengis.net/wcs/1.1.1" xmlns:wfs="http://www.opengis.net/wfs" xmlns:wps="http://www.opengis.net/wps/1.0.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsAll.xsd">
-		<ows:Identifier>e748c24b-fr3e-48cb-a4a4-904d30fadc20</ows:Identifier>
-		<wps:DataInputs>
-			<wps:Input>
-				<ows:Identifier>slave</ows:Identifier>
-				<wps:Data>
-					<wps:LiteralData><![CDATA[http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNDPA20080326_204749_000000162067_00129_31746_3124.N1/rdf]]></wps:LiteralData>
-				</wps:Data>
-			</wps:Input>
-			<wps:Input>
-				<ows:Identifier>poi</ows:Identifier>
-				<wps:Data>
-					<wps:LiteralData><![CDATA[POINT(13.4 42.35)]]></wps:LiteralData>
-				</wps:Data>
-			</wps:Input>
-			<wps:Input>
-				<ows:Identifier>extent</ows:Identifier>
-				<wps:Data>
-					<wps:LiteralData><![CDATA[2000,2000]]></wps:LiteralData>
-				</wps:Data>
-			</wps:Input>
-			<wps:Input>
-				<ows:Identifier>settings</ows:Identifier>
-				<wps:Data>
-					<wps:LiteralData><![CDATA[cc_winsize=&quot;128 128&quot;,fc_acc=&quot;8 8&quot;,int_multilook=&quot;4 4&quot;,coh_multilook=&quot;4 4&quot;,dumpbaseline=&quot;15 10&quot;]]></wps:LiteralData>
-				</wps:Data>
-			</wps:Input>
-			<wps:Input>
-				<ows:Identifier>master</ows:Identifier>
-				<wps:Data>
-					<wps:LiteralData><![CDATA[http://eo-virtual-archive4.esa.int/search/ASA_IMS_1P/ASA_IMS_1PNDPA20090311_204746_000000162077_00129_36756_3125.N1/rdf]]></wps:LiteralData>
-				</wps:Data>
-			</wps:Input>
-		</wps:DataInputs>
-		<wps:ResponseForm>
-			<wps:ResponseDocument status="true" storeExecuteResponse="true">
-				<wps:Output mimeType="application/xml">
-					<ows:Identifier>result_osd</ows:Identifier>
-				</wps:Output>
-				<wps:Output mimeType="application/xml">
-					<ows:Identifier>result_distribution</ows:Identifier>
-				</wps:Output>
-			</wps:ResponseDocument>
-		</wps:ResponseForm>
-	</wps:Execute>
 
+Job Status
+""""""""""
 
-
-The webserver acts as a proxy for all Web Processing Services added by the Administrator of the Portal.
-He forward the Execute request to the WPS and returns the ExecuteResponse. The response is conform to the WPS standard defined by OGC (http://schemas.opengis.net/wps/1.0.0).
+The platform supports both synchronous or asynchronous request. In the latter case, the platform will poll the statusLocation of the ExecuteResponse until the job is completed.
 
 .. code-block:: xml
 
@@ -81,19 +39,17 @@ He forward the Execute request to the WPS and returns the ExecuteResponse. The r
 	  <ProcessOutputs />
 	</ExecuteResponse>
 
-Get Job Status
-==============
 
-The webserver offers a GetStatus service, requesting the status of an existing job ran on the platform.
+For instance, it will poll such an URL
+
 
 .. code-block:: http
 
-    GET t2api/wps/RetrieveResultServlet?id=<job_id>
+    GET .../<RetrieveResultServlet>?id=<job_id>
 
-The webserver acts as a proxy for all Web Processing Services added by the Administrator of the Portal.
-He forward the GetStatus request to the WPS and returns the ExecuteResponse. The response is conform to the WPS standard defined by OGC (http://schemas.opengis.net/wps/1.0.0).
 
-Example of a process started with 33% completed:
+
+that could return a process status started with 33% completed:
 
 .. code-block:: xml
 
@@ -111,7 +67,9 @@ Example of a process started with 33% completed:
 	  <ProcessOutputs />
 	</ExecuteResponse>
 
-Example of a process successfully completed:
+
+When completed
+
 
 .. code-block:: xml
 
@@ -148,7 +106,9 @@ Example of a process successfully completed:
 	  </ProcessOutputs>
 	</ExecuteResponse>
 
-Example of a process failed:
+
+Or failed
+
 
 .. code-block:: xml
 

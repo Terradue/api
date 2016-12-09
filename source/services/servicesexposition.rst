@@ -123,6 +123,7 @@ example of metadata.xml
 	  <os:Query os:count="50" os:language="" os:searchTerms="" os:startIndex="" os:startPage="" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:param="http://a9.com/-/spec/opensearch/extensions/parameters/1.0/"/>
 	</feed>
 
+
 result metalink (list of files)
 -------------------------------
 
@@ -191,7 +192,44 @@ Visualize results of a processing job
 
 To be visualized into the geobrowser, a job processing should expose an opensearch description in the Execute response of the status location url.
 The Execute response can directly have a description link associated (see `result osd`_). Otherwise, the webserver will be used as a proxy to enable an opensearch request over the results (see `Search amongst results of a processing job`_).
-Then the search result should contain one entry with a png (which will be used as quicklook) and an associated spatial element (**box** (MANDATORY), **where** or **spatial**).
+
+Quicklook visualisation
+-----------------------
+
+For the entry to be visualized as quicklook on the geobrowser, the search result should contain one entry with an **offering** element (see `http://www.opengis.net/owc/1.0 <http://www.opengis.net/owc/1.0>`_) - which can be a png or a geotiff, used then as quicklook - as well as a **box** element (see `http://www.georss.org/georss <http://www.georss.org/georss>`_) to be able to know where to put it on the map.
+
+.. code-block:: xml
+
+	<owc:offering xmlns:owc="http://www.opengis.net/owc/1.0" code="http://www.opengis.net/spec/owc-atom/1.0/req/geotiff">
+		<owc:content href="https://store.terradue.com//api//production/workflows/flood-map-extent/runs/0000029-161103111819075-oozie-oozi-W/20150404_VV_water_mask.tif" type="image/tiff" />
+	</owc:offering>
+	<owc:offering xmlns:owc="http://www.opengis.net/owc/1.0" code="http://www.opengis.net/spec/owc-atom/1.0/req/img">
+		<owc:content href="https://store.terradue.com//api//production/workflows/flood-map-extent/runs/0000029-161103111819075-oozie-oozi-W/20150404_VV_water_mask.png" type="image/png" />
+	</owc:offering>
+
+Metadata visualisation
+----------------------
+
+Metadata associated to the entry will be displayed in a popup on the geobrowser when user clicks on the entry. The value is taken directly as html from the **summary** element.
+
+.. code-block:: xml
+	
+	<summary type="html">
+		<table> <tbody> <tr> <td><table valign="top"> <tbody> <tr> <td><strong>Identifier</strong></td><td>0000029-161103111819075-oozie-oozi-W/20150404_VV_water_mask.tif</td> </tr> </tbody> </table></td> </tr><tr> <td></td> </tr> </tbody> </table>
+	</summary>
+
+
+Files download
+--------------
+
+The list of downlodable files is taken from the list of **link** elements with rel = "enclosure". The **title** element is used as title on the download list.
+
+.. code-block:: xml
+
+	<link rel="enclosure" type="application/octet-stream" title="tif file via Data Gateway" length="9282529" href="https://store.terradue.com///production/workflows/flood-map-extent/runs/0000029-161103111819075-oozie-oozi-W/20150404_VV_water_mask.tif" />
+	<link rel="enclosure" type="application/octet-stream" title="png file via Data Gateway" length="43457" href="https://store.terradue.com///production/workflows/flood-map-extent/runs/0000029-161103111819075-oozie-oozi-W/20150404_VV_water_mask.png" />
+	<link rel="enclosure" type="application/octet-stream" title="pngw file via Data Gateway" length="150" href="https://store.terradue.com///production/workflows/flood-map-extent/runs/0000029-161103111819075-oozie-oozi-W/20150404_VV_water_mask.pngw" />
+
 
 World files and properties
 ==========================

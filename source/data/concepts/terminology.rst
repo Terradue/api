@@ -24,7 +24,7 @@ In the :ref:`Data Agency <dataagency>`, this is the module that hosts the servic
 Index
 """""
 
-An index is a collection of :ref:`entries <entry>` in the catalogue that most of the time describe a :ref:`dataset <dataset>`. For example, there is an index for Sentinel-1 data, another index for Landsat-8 data, and yet another index for your own data. An index is identified by a name (that must be all lowercase) and this name is used to refer to the index when performing indexing, search, update, and delete operations against the entries in it. Index names are unique in the :ref:`cluster <cluster>` where they are hosted.
+An index is a collection of :ref:`entries <entry>` in the :ref:`catalogue` that most of the time describe a :ref:`dataset <dataset>`. For example, there is an index for Sentinel-1 data, another index for Landsat-8 data, and yet another index for your own data. An index is identified by a name (that must be all lowercase) and this name is used to refer to the index when performing indexing, search, update, and delete operations against the entries in it. Index names are unique in the :ref:`cluster <cluster>` where they are hosted.
 
 .. _type:
 
@@ -51,7 +51,7 @@ An entry is the basic object indexed in the catalogue. Each entry has a unique i
 Collection
 """"""""""
 
-A collection is an abstract set of granules :ref:`entries <entry>` sharing one or more properties. A collection typically is a :ref:`series <series>` in an :ref:`index <index>` in the catalogue or a :ref:`data package <datapackage>` in the portal.
+A collection is a **reference** to an abstract set of :ref:`entries <entry>` sharing one or more properties. A collection typically references a :ref:`series <series>` in an :ref:`index <index>` in the catalogue or a :ref:`data package <datapackage>` in the portal.
 
 
 .. _series:
@@ -59,7 +59,7 @@ A collection is an abstract set of granules :ref:`entries <entry>` sharing one o
 Series
 """"""
 
-A series is a set of :ref:`entries <entry>` in the same :ref:`index <index>` with the same :ref:`type <type>` with predifined query filters. For instance, a seies "SLC" in index sentinel1 will be all the enties in the index with the product type equals to "SLC".
+A series is a set of :ref:`entries <entry>` in the same :ref:`index <index>` with the same :ref:`type <type>` with predifined query filters. For instance, a series "SLC" in index sentinel1 will be all the enties in the index with the product type equals to "SLC".
 
 
 .. _datapackage:

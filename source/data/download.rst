@@ -42,7 +42,7 @@ the catalogue is queried as follow
     https://catalog.terradue.com/sentinel1/search?do=sandbox1.dev.terradue.int
 
 
-This information allows the catalogue to apply a filter on the results and eventually modify the enclosure link of the entries. If the download origin is elligible to the **data gateway proxy download**, then the enclosure shall point to the closest data gateway to provide the data with the best route.
+This information allows the catalogue to apply a filter on the results and eventually modify the enclosure link of the entries. If the download origin is elligible to the **data gateway proxy download**, then the enclosure shall point to the closest data gateway to provide the data access via the best route.
 
 
 .. _datagatewayproxydl :

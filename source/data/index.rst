@@ -1,3 +1,5 @@
+.. _dataapi :
+
 
 Data API
 ========

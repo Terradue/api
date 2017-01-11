@@ -17,7 +17,7 @@ The kind of resources that can be quantified are listed in the section :ref:`res
 Compound
 """"""""
 
-This is the item representing the container of the quantities for the reporting system. It is then used to filter/aggregate :ref:`quantity` to a specific type of operation. For instance, a same job processing can be made of quantities of CPU time, memory allocation, processor instances and data volume to process. Another example is a data transfer made of multiple disk bytes written and read and network bytes uploaded and downloaded.
+This is the item representing a container of the quantities at reporting system level that the platform will then use this compound to filter/aggregate the :ref:`quantities <quantity>` for the credit/billing mechanism and eventually link it to a specific operation. For instance, a same job processing can be made of multiple quantities of CPU time, memory allocation, processor instances and data volume to process. Another example is a data transfer made of multiple disk bytes written and read and network bytes uploaded and downloaded.
 
 
 .. _account:

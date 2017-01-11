@@ -2,12 +2,12 @@
 
 
 Accounting API
---------------
+==============
 
 
-Accounting Resources usage
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. toctree::
+   :maxdepth: 2
 
-
-Aggregating Resources Report
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   concepts/index
+   record 
+   report

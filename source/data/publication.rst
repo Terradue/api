@@ -260,7 +260,7 @@ To delete a single entry by reference:
 
 .. code-block:: console
 
-    curl -u mrossi:ABcdEF -X DELETE "https://catalog.terradue.com/mrossi/query?S2A_OPER_MSI_L1C_TL_SGS__20160625T170310_A005267_T32TQM_N02.04
+    curl -u mrossi:ABcdEF -X DELETE "https://catalog.terradue.com/mrossi/query?uid=S2A_OPER_MSI_L1C_TL_SGS__20160625T170310_A005267_T32TQM_N02.04
 
 
 and it returns :

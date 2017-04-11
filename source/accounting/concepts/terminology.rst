@@ -25,7 +25,7 @@ This is the item representing a container of the quantities at reporting system 
 Account
 """""""
 
-The account is the set of information identifying the origin of the quntityies accounting. It usually identifies element of the platform originating the operation for which the quantities are accounted. Those information are typically the platform name, the username and an internal reference.
+The account is the set of information identifying the origin of the quantities accounting. It usually identifies element of the platform originating the operation for which the quantities are accounted. Those information are typically the platform name, the username and an internal reference.
 
 
 

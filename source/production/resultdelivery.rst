@@ -140,9 +140,6 @@ example of metadata.xml
 	</wps:Output> 
 
 
-The content
-	  
-
 .. rubric:: Footnotes
 
 .. [#OGCOWC] http://www.opengeospatial.org/standards/owc

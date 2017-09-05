@@ -59,8 +59,3 @@ If the analysis of the results allows it, the response contains one `Output` ele
 
 
 
-.. rubric:: Footnotes
-
-.. [#DCS] http://docs.terradue.com/developer-sandbox/
-.. [#DCSAD] http://docs.terradue.com/developer-sandbox/reference/application/index.html
-

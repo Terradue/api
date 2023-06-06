@@ -1,0 +1,13 @@
+(mediatype)=
+
+# Content Type
+
+A media type is an identifier for file formats on the Internet.
+
+```text
+application/atom+xml
+```
+
+It indicates the format of the representation of the metadata of the {term}`datasets`.
+
+Most of the content types will represent the metadata as a list of entries such as the {term}`Atom <atom>` format.
